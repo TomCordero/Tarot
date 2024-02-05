@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Rider-Waite Tarot</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+<style type="text/css">
+#listTableDiv img {
+	width: 75%;
+}
+#listTableDiv img:hover {
+	transform:scale(1.5);
+}
+th {
+	position: sticky;
+	top: 0;
+}
+#listTableDiv td {
+	vertical-align: middle;
+}
+input {
+	width: 25%;
+}
+body {
+	background-color: #212529;
+}
+</style>
+<div id="floatHeadListTable" class="table-responsive fixed-top">
+	<table class="table table-dark table-hover w-auto table-bordered text-center">
+		<thead>
+			<tr>
+				<th class="col-sm-1">Card</th>
+				<th class="col-sm-1">Name</th>
+				<th class="col-sm-5">Reading</th>
+				<th class="col-sm-5">Reversed Reading</th>
+			</tr>
+			<tr>
+				<td id="searchRow" colspan="4" class="text-left">
+					<input type="text" id="myInput" onkeyup="search()" placeholder="Search.." title="Type in a name"> &nbsp;
+					<i id="numFiltered"></i><i id="numFilteredText" style="display: none"> rows filtered out</i>
+				</td>
+			</tr>
+		</thead>
+	</table>
+</div>
+<div id="listTableDiv" class="table-responsive">
+	<table id="listTable" class="table table-dark table-hover w-auto table-bordered text-center">
+		<thead>
+			<tr>
+				<th class="col-sm-1">Card</th>
+				<th class="col-sm-1">Name</th>
+				<th class="col-sm-5">Reading</th>
+				<th class="col-sm-5">Reversed Reading</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td id="searchRowUnder" colspan="4" class="text-left">
+					<input type="text" id="myInputUnder" onkeyup="" placeholder="Search.." title="">
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/M0.jpg"></td>
+				<td>The Fool</td>
+				<td>Folly, mania, extravagance, intoxication, delirium, frenzy, exposure.</td>
+				<td>Negligence, absence, distribution, carelessness, apathy, nullity, vanity.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M1.jpg"</td>
+				<td>The Magician</td>
+				<td>Skill, diplomacy, speech, sickness, pain, loss, disaster, self-confidence, will, the Querent themself. </td>
+				<td>Physician, sorcerer, mental illness, disgrace, unease.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M2.jpg"</td>
+				<td>The High Priestess</td>
+				<td>Secrets, mystery, the future as yet unrevealed, the romantic interest of the Querent, the Querent themself, silence, tenacity, wisdom, science.</td>
+				<td>Passion, moral or physical zeal, excessive pride, surface knowledge.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M3.jpg"</td>
+				<td>The Empress</td>
+				<td>Fruitfulness, initiative, action, long days, clandestine, the unknown, difficulty, doubt, ignorance.</td>
+				<td>Light, truth, the unraveling of involved matters, public rejoice, hesitation.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M4.jpg"</td>
+				<td>The Emperor</td>
+				<td>Stability, power, aid, protection, a great person, conviction, reason.</td>
+				<td>Benevolence, compassion, credit, confusion to enemies, obstruction, immaturity.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M5.jpg"</td>
+				<td>The Hierophant</td>
+				<td>Marriage alliance, captivity, servitude, mercy and goodness, inspiration, the man to whom the Querent has recourse.</td>
+				<td>Society, good understanding, concord, over-kindness, weakness.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M6.jpg"</td>
+				<td>The Lovers</td>
+				<td>Attraction, love, beauty, trials overcome.</td>
+				<td>Failure, foolish designs.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M7.jpg"</td>
+				<td>The Chariot</td>
+				<td>Aid, providence, war, triumph, presumption, vengeance, trouble.</td>
+				<td>Riot, quarrel, dispute, litigation, defeat.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M8.jpg"</td>
+				<td>Strength</td>
+				<td>Power, energy, action, courage, nobleness.</td>
+				<td>Abuse of power, despotism, weakness, discord.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M9.jpg"</td>
+				<td>The Hermit</td>
+				<td>Prudence, treason, deception, corruption, roguery.</td>
+				<td>Concealment, disguise, policy, fear, unreasoned caution.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M10.jpg"</td>
+				<td>Wheel of Fortune</td>
+				<td>Destiny, fortune, success, luck, felicity.</td>
+				<td>Increase, abundance, excess.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M11.jpg"</td>
+				<td>Justice</td>
+				<td>Equity, rightness, integrity, executive.</td>
+				<td>Law in all departments, bigotry, bias, excessive severity.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M12.jpg"</td>
+				<td>The Hanged Man</td>
+				<td>Wisdom, trials, circumspection, discernment, sacrifice, intuition, divination, prophecy.</td>
+				<td>Selfishness, the crowd, body politic.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M13.jpg"</td>
+				<td>Death</td>
+				<td>End, mortality, destruction, corruption.</td>
+				<td>Inertia, sleep, lethargy, petrifaction, sleepwalking.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M14.jpg"</td>
+				<td>Temperance</td>
+				<td>Economy, moderation, frugality, management, accommodation.</td>
+				<td>Church, religions, sects, priesthood, unfortunate combinations, separation, competing interests.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M15.jpg"</td>
+				<td>The Devil</td>
+				<td>Ravage, violence, force, vehemence, extraordinary efforts, fatality, that which is predestined but not for this reason evil.</td>
+				<td>Evil fatality, weakness, pettiness, blindness.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M16.jpg"</td>
+				<td>The Tower</td>
+				<td>Misery, distress, ruin, poverty, adversity, calamity, disgrace, deception.</td>
+				<td>The same in a lesser degree, also oppression, imprisonment, tyranny.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M17.jpg"</td>
+				<td>The Star</td>
+				<td>Loss, theft, deprivation, abandonment. Alternatively, hope and bright prospects.</td>
+				<td>Arrogance, impotence, snobbery.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M18.jpg"</td>
+				<td>The Moon</td>
+				<td>Hidden enemies, danger, false accusation, darkness, terror, deception, error.</td>
+				<td>Instability, unsteadiness, silence, lesser degrees of deception and error.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M19.jpg"</td>
+				<td>The Sun</td>
+				<td>Material happiness, fortunate marriage, contentment.</td>
+				<td>The same in a lesser sense.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M20.jpg"</td>
+				<td>Judgment</td>
+				<td>Change of position, renewal, outcome.</td>
+				<td>Weakness, cowardice, simplicity, also deliberation, decision, sentence.</td>
+			</tr>
+			<tr>
+				<td><img src="images/M21.jpg"</td>
+				<td>The World</td>
+				<td>Assured success, route, voyage, emigration, flight, change of place.</td>
+				<td>Inertia, fixedness, stagnation, permanence.</td>
+			</tr>
+			<tr>
+				<td><img src="images/W1.jpg"</td>
+				<td>Ace of Wands</td>
+				<td>Creation, invention, enterprise, the powers which result in these, principle, beginning, source, birth, family, origin, the beginning of enterprises, money, fortune, inheritance.</td>
+				<td>Fall, decadence, ruin, damnation, to perish, clouded joy.</td>
+			</tr>
+			<tr>
+				<td><img src="images/W2.jpg"</td>
+				<td>Two of Wands</td>
+				<td>On one hand, riches, fortune, magnificence. And on the other, physical suffering, disease, chagrin, sadness, mortification. Malady, mortification, the sadness of Alexander amidst the grandeur of this world’s wealth.</td>
+				<td>Surprise, wonder, enchantment, emotion, trouble, fear.</td>
+			</tr>
+			<tr>
+				<td><img src="images/W3.jpg"</td>
+				<td>Three of Wands</td>
+				<td>Established strength, enterprise, effort, trade, discovery, commerce.</td>
+				<td>The end of troubles, suspension or end of adversity, disappointment, and toil.</td>
+			</tr>
+			<tr>
+				<td><img src="images/W4.jpg"</td>
+				<td>Four of Wands</td>
+				<td>Country life, repose, concord, harmony, prosperity, peace, and the perfected work of these.</td>
+				<td>The meaning remains unaltered: Increase, felicity, beauty, embellishment.</td>
+			</tr>
+			<tr>
+				<td><img src="images/W5.jpg"</td>
+				<td>Five of Wands</td>
+				<td>Imitation, the strenuous competition and struggle of the search for riches and fortune. Hence some attributions say that it is a card of gold, gain, opulence.</td>
+				<td>Trickery, contradiction, litigation, disputes.</td>
+			</tr>
+			<tr>
+				<td><img src="images/W6.jpg"</td>
+				<td>Six of Wands</td>
+				<td>A victor triumphing, but also great news, such as might be carried in state by the King’s courier. Expectation crowned with its own desire, the crown of hope.</td>
+				<td>Apprehension, fear, as of a victorious enemy at the gate, treachery, disloyalty, as of gates being opened to the enemy.</td>
+			</tr>
+			<tr>
+				<td><img src="images/W7.jpg"</td>
+				<td>Seven of Wands</td>
+				<td>Valor, discussion, wordy strife, negotiations, war of trade, barter, competition, success.</td>
+				<td>Perplexity, embarrassments, anxiety.</td>
+			</tr>
+			<tr>
+				<td><img src="images/W8.jpg"</td>
+				<td>Eight of Wands</td>
+				<td>Activity in undertakings, the path of such activity, swiftness, as that of an express messenger; great haste, great hope, speed towards an end which promises assured felicity; that which is on the move, also the arrows of love.</td>
+				<td>Arrows of jealousy, internal dispute, stingings of conscience, quarrels.</td>
+			</tr>
+			<tr>
+				<td><img src="images/W9.jpg"</td>
+				<td>Nine of Wands</td>
+				<td>Strength in opposition, meeting the onslaught boldly. Also delay, suspension, adjournment.</td>
+				<td>Obstacles, adversity, calamity.</td>
+			</tr>
+			<tr>
+				<td><img src="images/W10.jpg"</td>
+				<td>Ten of Wands</td>
+				<td>Honor and good faith. Oppression, but also fortune, gain, any kind of success of these things. Also false-seeming, disguise, betrayal. Success is impaired if the Nine of Swords follows, and if it is a question of a lawsuit—there will be certain loss.</td>
+				<td>Contrarieties, difficulties, intrigues, and their analogies.</td>
+			</tr>
+			<tr>
+				<td><img src="images/WP.jpg"</td>
+				<td>Page of Wands</td>
+				<td>Faithful, a lover, an envoy, a postman, bearing favorable testimony. A dangerous rival, if followed by the Page of Cups. Has the chief qualities of his suit.</td>
+				<td>Anecdotes, announcements, evil news. Also indecision and the instability which usually accompanies it.</td>
+			</tr>
+			<tr>
+				<td><img src="images/WN.jpg"</td>
+				<td>Knight of Wands</td>
+				<td>Departure, absence, flight, emigration. Change of residence.</td>
+				<td>Rupture, division, interruption, discord.</td>
+			</tr>
+			<tr>
+				<td><img src="images/WQ.jpg"</td>
+				<td>Queen of Wands</td>
+				<td>Friendly, chaste, loving, honorable. Also, love of money.</td>
+				<td>Good, economical, obliging, serviceable. Also signifies opposition, jealousy, deceit, and infidelity.</td>
+			</tr>
+			<tr>
+				<td><img src="images/WK.jpg"</td>
+				<td>King of Wands</td>
+				<td>Friendly, honest and conscientious.</td>
+				<td>Good, but severe; austere, yet tolerant.</td>
+			</tr>
+			<tr>
+				<td><img src="images/C1.jpg"</td>
+				<td>Ace of Cups</td>
+				<td>True heart, joy, content, abode, nourishment, abundance, fertility, holy table, felicity hereof.</td>
+				<td>False heart, mutation, instability, revolution.</td>
+			</tr>
+			<tr>
+				<td><img src="images/C2.jpg"</td>
+				<td>Two of Cups</td>
+				<td>Love, passion, friendship, affinity, union, concord, sexual relations. That which nature has santified.</td>
+				<td>False love, folly, misunderstanding.</td>
+			</tr>
+			<tr>
+				<td><img src="images/C3.jpg"</td>
+				<td>Three of Cups</td>
+				<td>The conclusion of any matter in plenty, perfection and merriment, happy issue, victory, fulfillment, solace, healing.</td>
+				<td>Expedition, dispatch, achievement, end.</td>
+			</tr>
+			<tr>
+				<td><img src="images/C4.jpg"</td>
+				<td>Four of Cups</td>
+				<td>Weariness, disgust, aversion, imaginary annoyances, blended pleasure.</td>
+				<td>Novelty, omen, new instruction, new relations.</td>
+			</tr>
+			<tr>
+				<td><img src="images/C5.jpg"</td>
+				<td>Five of Cups</td>
+				<td>Incomplete loss, inheritance, transmission, patrimony, but not corresponding to expectations. Marriage, but not without bitterness or frustration.</td>
+				<td>News, alliances, affinity, blood relation, ancestry, return, false projects.</td>
+			</tr>
+			<tr>
+				<td><img src="images/C6.jpg"</td>
+				<td>Six of Cups</td>
+				<td>Memories and the past. Reflecting on childhood, happiness, enjoyment, but things that have vanished. Alternatively, new relations, new knowledge, new environment.</td>
+				<td>The future, renewal, that which will come to pass presently.</td>
+			</tr>
+			<tr>
+				<td><img src="images/C7.jpg"</td>
+				<td>Seven of Cups</td>
+				<td>Unexpected opportunity, reflection, imagination, sentiment, things seen in the glass of contemplation, some attainment in these degrees but nothing permanent or substantial.</td>
+				<td>Desire, will, determination, project.</td>
+			</tr>
+			<tr>
+				<td><img src="images/C8.jpg"</td>
+				<td>Eight of Cups</td>
+				<td>The card speaks for itself on the surface, but other readings are entirely antithetical—giving joy, mildness, timidity, honor, modesty.</td>
+				<td>Great joy, happiness, feasting.</td>
+			</tr>
+			<tr>
+				<td><img src="images/C9.jpg"</td>
+				<td>Nine of Cups</td>
+				<td>Concord, contentment, physical wellbeing. Also victory, success, advantage, satisfaction for the Querent or person for whom the consultation is made.</td>
+				<td>Truth, loyalty, and liberty.</td>
+			</tr>
+			<tr>
+				<td><img src="images/C10.jpg"</td>
+				<td>Ten of Cups</td>
+				<td>Contentment, repose of the entire heart—the perfection of that state. Alternatively, the place inhabited by the Querent, or a person who is taking charge of the Querent’s interests.</td>
+				<td>Repose of the false heart, indignation, violence.</td>
+			</tr>
+			<tr>
+				<td><img src="images/CP.jpg"</td>
+				<td>Page of Cups</td>
+				<td>News, message, application, reflection, meditation—also these things directed to business.</td>
+				<td>Taste, inclination, attachment, seduction, deception, underhanded.</td>
+			</tr>
+			<tr>
+				<td><img src="images/CN.jpg"</td>
+				<td>Knight of Cups</td>
+				<td>Arrival, approach—sometimes that of a messenger, advances, proposition, demeanor, invitation, incitement.</td>
+				<td>Trickery, deception, subtlety, swindling, duplicity, fraud.</td>
+			</tr>
+			<tr>
+				<td><img src="images/CQ.jpg"</td>
+				<td>Queen of Cups</td>
+				<td>Loving intelligence, success, happiness, pleasure, wisdom, virtue.</td>
+				<td>Someone not to be trusted, perversion, vice, dishonor, depravity.</td>
+			</tr>
+			<tr>
+				<td><img src="images/CK.jpg"</td>
+				<td>King of Cups</td>
+				<td>Business, law, divinity, responsibility, obligation to the Querent. Also equity, art, and science, including those who profess, and creative intelligence.</td>
+				<td>Dishonest, double-dealing, roguery, extortion, injustice, vice, scandal.</td>
+			</tr>
+			<tr>
+				<td><img src="images/S1.jpg"</td>
+				<td>Ace of Swords</td>
+				<td>Triumph, the excessive degree in everything, conquest, triumph of force. Great force, in love as well as hatred.</td>
+				<td>The same meanings, but the results are disastrous. Also conception, childbirth, augmentation, multiplicity.</td>
+			</tr>
+			<tr>
+				<td><img src="images/S2.jpg"</td>
+				<td>Two of Swords</td>
+				<td>Conformity and the balance which it suggests, courage, friendship, affection, concord in a state of arms, intimacy.</td>
+				<td>Cheating, falsehood, duplicity, disloyalty.</td>
+			</tr>
+			<tr>
+				<td><img src="images/S3.jpg"</td>
+				<td>Three of Swords</td>
+				<td>Removal, absence, delay, division, rupture, dispersion.</td>
+				<td>Mental alienation, error, loss, distraction, disorder, confusion.</td>
+			</tr>
+			<tr>
+				<td><img src="images/S4.jpg"</td>
+				<td>Four of Swords</td>
+				<td>Vigilance, retreat, solitude, hermit’s repose, exile, tomb and coffin.</td>
+				<td>Wise administration, watchfulness, economy, greed, precaution, testament.</td>
+			</tr>
+			<tr>
+				<td><img src="images/S5.jpg"</td>
+				<td>Five of Swords</td>
+				<td>Degradation, destruction, reversal, infamy, dishonor, loss.</td>
+				<td>The same—burial and funeral rites.</td>
+			</tr>
+			<tr>
+				<td><img src="images/S6.jpg"</td>
+				<td>Six of Swords</td>
+				<td>Journey by water, route, way, envoy, courier, expedient.</td>
+				<td>Declaration, confession, publicity. Alternatively, a proposal of love.</td>
+			</tr>
+			<tr>
+				<td><img src="images/S7.jpg"</td>
+				<td>Seven of Swords</td>
+				<td>Design, attempt, wish, hope, confidence—also quarrelling. A plan that may fail, annoyance.</td>
+				<td>Good advice, counsel, instruction, slander, babbling.</td>
+			</tr>
+			<tr>
+				<td><img src="images/S8.jpg"</td>
+				<td>Eight of Swords</td>
+				<td>Bad news, violent distress, crisis, blame, great power, conflict, false accusation, sickness.</td>
+				<td>Disquiet, difficulty, opposition, accident, treachery, the unforeseen, fatality.</td>
+			</tr>
+			<tr>
+				<td><img src="images/S9.jpg"</td>
+				<td>Nine of Swords</td>
+				<td>Death, failure, miscarriage, delay, deception, disappointment, despair.</td>
+				<td>Imprisonment, doubt, suspicion, reasonable fear, shame.</td>
+			</tr>
+			<tr>
+				<td><img src="images/S10.jpg"</td>
+				<td>Ten of Swords</td>
+				<td>Pain, affliction, tears, sadness, desolation.</td>
+				<td>Advantage, profit, success, favor, but none of these are permanent. Also power and authority.</td>
+			</tr>
+			<tr>
+				<td><img src="images/SP.jpg"</td>
+				<td>Page of Swords</td>
+				<td>Authority, oversight, secret service, vigilance, spying, examination, and the qualities belonging to these.</td>
+				<td>More evil side of these qualities, what is unforeseen, an unprepared state, sickness.</td>
+			</tr>
+			<tr>
+				<td><img src="images/SN.jpg"</td>
+				<td>Knight of Swords</td>
+				<td>Skill, bravery, capacity, defense, preparation, hostility, wrath, war, destruction, opposition, resistance, ruin.</td>
+				<td>Carelessness, incapacity, extravagance.</td>
+			</tr>
+			<tr>
+				<td><img src="images/SQ.jpg"</td>
+				<td>Queen of Swords</td>
+				<td>Widowhood, female sadness and embarrassment, absence, sterility, mourning, loss, separation.</td>
+				<td>Malice, bigotry, deceit, deception, thin-skinned.</td>
+			</tr>
+			<tr>
+				<td><img src="images/SK.jpg"</td>
+				<td>King of Swords</td>
+				<td>Judgment and all its connections—power, command, authority, militant intelligence, law, offices of the crown, and so forth.</td>
+				<td>Cruelty, perversity, barbarity, betrayal, evil intention.</td>
+			</tr>
+			<tr>
+				<td><img src="images/P1.jpg"</td>
+				<td>Ace of Pentacles</td>
+				<td>Perfect contentment, happiness, ecstasy—also speedy intelligence, gold.</td>
+				<td>The evil side of wealth, bad intelligence. Also great riches.</td>
+			</tr>
+			<tr>
+				<td><img src="images/P2.jpg"</td>
+				<td>Two of Pentacles</td>
+				<td>Happiness and recreation. Also news and messages in writing, such as obstacles, agitation, trouble, embroilment.</td>
+				<td>Enforced happiness, simulated enjoyment, handwriting, composition, letters of exchange.</td>
+			</tr>
+			<tr>
+				<td><img src="images/P3.jpg"</td>
+				<td>Three of Pentacles</td>
+				<td>Profession, trade, skilled labor. Also nobility, aristocracy, renown, glory.</td>
+				<td>Mediocrity in work and otherwise, childishness, pettiness, weakness.</td>
+			</tr>
+			<tr>
+				<td><img src="images/P4.jpg"</td>
+				<td>Four of Pentacles</td>
+				<td>The surety of possessions, cleaving to that which one has, gifts, legacy, inheritance.</td>
+				<td>Suspense, delay, opposition.</td>
+			</tr>
+			<tr>
+				<td><img src="images/P5.jpg"</td>
+				<td>Five of Pentacles</td>
+				<td>Material trouble above all, destitution or otherwise. Alternatively, love and lovers—wife, husband, friend, mistress—also concordance, affinities. These alternatives can not be harmonized.</td>
+				<td>Disorder, chaos, ruin, discord, waste.</td>
+			</tr>
+			<tr>
+				<td><img src="images/P6.jpg"</td>
+				<td>Six of Pentacles</td>
+				<td>Presents, gifts, gratification. Also attention, vigilance, opportunity, present prosperity.</td>
+				<td>Desire, greed, envy, jealousy, illusion.</td>
+			</tr>
+			<tr>
+				<td><img src="images/P7.jpg"</td>
+				<td>Seven of Pentacles</td>
+				<td>Money, business, barter, altercation, quarrel. Also innocence, ingenuity, cleansing.</td>
+				<td>Anxiety about money.</td>
+			</tr>
+			<tr>
+				<td><img src="images/P8.jpg"</td>
+				<td>Eight of Pentacles</td>
+				<td>Work, employment, commission, craftsmanship, skill in craft and business.</td>
+				<td>Voided ambition, vanity, greed, extortion, usury.</td>
+			</tr>
+			<tr>
+				<td><img src="images/P9.jpg"</td>
+				<td>Nine of Pentacles</td>
+				<td>Prudence, safety, success, accomplishment, certainty, understanding.</td>
+				<td>Roguery, deception, voided project, bad faith.</td>
+			</tr>
+			<tr>
+				<td><img src="images/P10.jpg"</td>
+				<td>Ten of Pentacles</td>
+				<td>Gain, riches, family matters, archives, extraction, the family home.</td>
+				<td>Chance, fatality, loss, robbery, games of hazard; sometimes gift, dowry, pension.</td>
+			</tr>
+			<tr>
+				<td><img src="images/PP.jpg"</td>
+				<td>Page of Pentacles</td>
+				<td>Application, study scholarship, reflection. Also news, messages and the bringer thereof, rule, management.</td>
+				<td>Extravagance, dispersion, liberality, luxury, unfavorable news.</td>
+			</tr>
+			<tr>
+				<td><img src="images/PN.jpg"</td>
+				<td>Knight of Pentacles</td>
+				<td>Utility, serviceableness, interest, uprightness, responsibility.</td>
+				<td>Inertia, idleness, repose of that kind, stagnation. Also discouragement, carelessness.</td>
+			</tr>
+			<tr>
+				<td><img src="images/PQ.jpg"</td>
+				<td>Queen of Pentacles</td>
+				<td>Opulence, generosity, security, magnificence, liberty.</td>
+				<td>Evil, fear, suspicion, suspense, mistrust.</td>
+			</tr>
+			<tr>
+				<td><img src="images/PK.jpg"</td>
+				<td>King of Pentacles</td>
+				<td>Valor, realizing intelligence, business and normal intellectual aptitude, sometimes mathematical gifts and attainments of this kind—success in these paths.</td>
+				<td>Vice, weakness, ugliness, perversity, corruption, peril.</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<script>
+function search() {
+	var input, filter, table, tr, td, i, txtValue;
+	var filterCount = 0;
+	input = document.getElementById("myInput");
+	filter = input.value.toUpperCase();
+	table = document.getElementById("listTable");
+	tr = table.getElementsByTagName("tr");
+	for (i = 1; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[1];
+		if (td) {
+			txtValue = td.textContent || td.innerText;
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				tr[i].style.display = "";
+				} else {
+				tr[i].style.display = "none";
+				filterCount++;
+			}
+		}       
+	}
+	if (filterCount > 0) {
+		document.getElementById("numFiltered").innerHTML = filterCount;
+		document.getElementById("numFiltered").style.display = 'inline';
+		document.getElementById("numFilteredText").style.display = 'inline';
+	} else {
+		document.getElementById("numFiltered").style.display = 'none';
+		document.getElementById("numFilteredText").style.display = 'none';
+	}
+}
+</script>
+</body>
+</html>
